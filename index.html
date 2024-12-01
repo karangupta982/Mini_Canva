@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Canva-like Editor</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+        <div class="main-container">
+            <div class="canvas-container">
+                <div class="undo-redo-container">
+                    <div class="undo-button" onclick="undo()">
+                        <img src="./asstes/undo.png" alt="undo">
+                        <p>Undo</p>
+                        
+                    </div>
+                    <div class="redo-button" onclick="redo()">
+                        <img src="./asstes/redo.png" alt="redo">
+                        <p>Redo</p>
+                    </div>
+                </div>
+                <div id="canvas" class="canvas-area"></div>
+                <div class="toolbar-container">
+                    <select id="fontFamily" onchange="changeFont()" class="textStyles">
+                        <option value="" disabled selected class="font">Font</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Comic Sans MS">Comic Sans MS</option>
+                        <option value="Impact">Impact</option>
+                        <option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+                        <option value="Geneva">Geneva</option>
+                        <option value="Lucida Console">Lucida Console</option>
+                        <option value="Monaco">Monaco</option>
+                        <option value="Palatino">Palatino</option>
+                        <option value="Bookman">Bookman</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Lucida Sans">Lucida Sans</option>
+                    </select>
+
+                    <div class="textsize">
+                        <button onclick="decreaseSize()">-</button>
+                        <p id="textSizeDisplay">20</p>
+                        <button onclick="increaseSize()">+</button>
+                    </div>
+
+                    <div class="features">
+                        <button onclick="toggleBold()" class="format-btn">
+                            <img src="./asstes/bold.png" alt="Bold">
+                        </button>
+                        <button onclick="toggleItalic()" class="format-btn">
+                            <img src="./asstes/italic.png" alt="Italic">
+                        </button>
+                        <button onclick="alignText('left')" class="format-btn alignLeft">
+                            <img src="./asstes/align-left-solid.svg" alt="alignLeft">
+                        </button>
+                        <button onclick="alignText('center')" class="format-btn alignCenter">
+                            <img src="./asstes/align center.svg" alt="alignCenter">
+                        </button>
+                        <button onclick="alignText('right')" class="format-btn alignRight">
+                            <img src="./asstes/align-right-solid.svg" alt="alignRight">
+                        </button>
+                    </div>
+                </div> 
+                 
+            </div>
+            <button onclick="addText()" class="addText"> <span class="spanT">T</span> Add Text</button>
+        </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
